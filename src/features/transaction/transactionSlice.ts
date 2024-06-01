@@ -135,7 +135,7 @@ const transactionSlice = createSlice({
         state.isLoading = false;
 
         state.transactions = state.transactions.filter(
-          (t: any) => t.id !== action.payload
+          (t: any) => t.id !== action.meta.arg
         );
       })
       .addCase(deleteTransactionAsync.rejected, (state, action) => {

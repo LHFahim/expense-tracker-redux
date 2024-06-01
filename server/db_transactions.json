@@ -7,28 +7,10 @@
       "id": 1
     },
     {
-      "id": 2,
-      "name": "Family Expenses",
-      "type": "expense",
-      "amount": 200000
-    },
-    {
       "name": "Fahim Hassan",
       "type": "income",
       "amount": 10000,
       "id": 3
-    },
-    {
-      "name": "Fahim Hassan",
-      "type": "income",
-      "amount": 10000,
-      "id": 4
-    },
-    {
-      "name": "Fahim Hassan",
-      "type": "expense",
-      "amount": 100,
-      "id": 5
     }
   ]
 }

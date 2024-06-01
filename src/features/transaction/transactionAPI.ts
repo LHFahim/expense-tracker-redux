@@ -20,5 +20,7 @@ export const updateTransactionAPI = async (id: any, data: any) => {
 export const deleteTransactionAPI = async (id: any) => {
   const response = axiosInstance.delete(`/transactions/${id}`);
 
+  return true;
+
   // return response.data;
 };
