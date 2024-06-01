@@ -17,6 +17,18 @@
       "type": "income",
       "amount": 10000,
       "id": 3
+    },
+    {
+      "name": "Fahim Hassan",
+      "type": "income",
+      "amount": 10000,
+      "id": 4
+    },
+    {
+      "name": "Fahim Hassan",
+      "type": "expense",
+      "amount": 100,
+      "id": 5
     }
   ]
 }
