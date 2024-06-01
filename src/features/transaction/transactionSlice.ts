@@ -23,6 +23,7 @@ export interface ITransactionState {
   isLoading: boolean;
   isError: boolean;
   error: string;
+  editing: ITransaction | {};
 }
 
 const transactionIntialState: ITransactionState = {
@@ -30,6 +31,7 @@ const transactionIntialState: ITransactionState = {
   isLoading: false,
   isError: false,
   error: "",
+  editing: {},
 };
 
 export const fetchTransactionsAsync = createAsyncThunk(
@@ -52,7 +54,6 @@ export const updateTransactionAsync = createAsyncThunk(
   "transaction/updateTransaction",
   async ({ id, data }: any) => {
     const response = await updateTransactionAPI(id, data);
-    console.log("🚀 ~ response:", response);
     return response;
   }
 );
@@ -67,7 +68,14 @@ export const deleteTransactionAsync = createAsyncThunk(
 const transactionSlice = createSlice({
   name: "transaction",
   initialState: transactionIntialState,
-  reducers: {},
+  reducers: {
+    editActive: (state, action) => {
+      state.editing = action.payload;
+    },
+    editInActive: (state) => {
+      state.editing = {};
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchTransactionsAsync.pending, (state) => {
@@ -139,3 +147,4 @@ const transactionSlice = createSlice({
 });
 
 export const transactionReducer = transactionSlice.reducer;
+export const { editActive, editInActive } = transactionSlice.actions;

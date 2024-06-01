@@ -7,10 +7,7 @@ export const getTransactionsAPI = async () => {
 };
 
 export const addTransactionAPI = async (data: any) => {
-  console.log("🚀 ~ addTransactionAPI ~ data:", data);
   const response = await axiosInstance.post("/transactions", data);
-  console.log("🚀 ~ addTransactionAPI ~ response:", response);
-
   return response.data;
 };
 
